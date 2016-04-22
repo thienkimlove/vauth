@@ -1,0 +1,11 @@
+{
+    "name": "thienkimlove/vauth",
+    "description": "Example auth packages",
+    "authors": [
+        {
+            "name": "Đỗ Mạnh Quân",
+            "email": "manhquan.do@ved.com.vn"
+        }
+    ],
+    "require": {}
+}
