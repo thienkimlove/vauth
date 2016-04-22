@@ -3,14 +3,14 @@
 #### Install
 1. Install fresh version of Laravel 5.2
 
-2. Require package `composer require thienkimlove/vauth`
+2. Require package `composer require thienkimlove/vauth:dev-master`
 
 3. Add below like to `config/app.php` :
 ```
 Thienkimlove\Vauth\VauthServiceProvider::class,
 ```
 
-4. Run `php artisan migrate && php artisan make:auth && php artisan vendor:publish`
+4. Run `php artisan vendor:publish && php artisan migrate && php artisan make:auth`
 
 5. Add in `routes.php`
 ```
