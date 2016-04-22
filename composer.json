@@ -7,6 +7,9 @@
             "email": "manhquan.do@ved.com.vn"
         }
     ],
+    "homepage": "https://github.com/thienkimlove/vauth",
+    "license": "MIT",
+    "minimum-stability": "dev",
     "require": {
         "php" : ">=5.5.0"
     },
