@@ -30,6 +30,22 @@ class VauthServiceProvider extends ServiceProvider
             __DIR__.'/vauth.php' => config_path('vauth.php')
         ]);
 
+        if (!class_exists('CreatePostsTable')) {
+            // Publish the migration
+            $timestamp = date('Y_m_d_His', time());
+            $this->publishes([
+                __DIR__.'/migrations/create_posts_table.php.stub' => $this->app->databasePath().'/migrations/'.$timestamp.'_create_posts_table.php',
+            ], 'migrations');
+        }
+
+        if (!class_exists('CreateVedPermission')) {
+            // Publish the migration
+            $timestamp = date('Y_m_d_His', time());
+            $this->publishes([
+                __DIR__.'/migrations/create_ved_permission.php.stub' => $this->app->databasePath().'/migrations/'.$timestamp.'_create_ved_permission.php',
+            ], 'migrations');
+        }
+
         $registrar->registerPermissions();
        
     }

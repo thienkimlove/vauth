@@ -28,10 +28,15 @@ class VauthRegistrar
      */
     public function registerPermissions()
     {
-        foreach (Permission::with('roles')->get() as $permission) {
+        foreach ($this->getPermissions() as $permission) {
             $this->gate->define($permission->name, function ($user) use ($permission) {
                 return $user->hasRole($permission->roles);
             });
         }
+    }
+
+    protected function getPermissions()
+    {
+        return app(Permission::class)->with('roles')->get();
     }
 }
