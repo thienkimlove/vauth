@@ -3,9 +3,8 @@
 namespace Thienkimlove\Vauth\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Thienkimlove\Vauth\Contracts\Permission as PermissionContracts;
 
-class Permission extends Model implements PermissionContracts
+class Permission extends Model 
 {
     protected $fillable = ['name', 'label'];
     

@@ -3,9 +3,8 @@
 namespace Thienkimlove\Vauth\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Thienkimlove\Vauth\Contracts\Role as RoleContracts;
 
-class Role extends Model implements RoleContracts
+class Role extends Model
 {
     protected $fillable = ['name', 'label'];
 

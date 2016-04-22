@@ -3,9 +3,8 @@
 namespace Thienkimlove\Vauth\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Thienkimlove\Vauth\Contracts\Post as PostContracts;
 
-class Post extends Model implements PostContracts
+class Post extends Model
 {
     protected $fillable = ['title', 'body'];
 }
