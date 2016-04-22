@@ -3,7 +3,7 @@
 namespace Thienkimlove\Vauth;
 
 use Illuminate\Contracts\Auth\Access\Gate;
-use Thienkimlove\Vauth\Models\Permission;
+use Thienkimlove\Vauth\Contracts\Permission;
 
 class VauthRegistrar
 {
