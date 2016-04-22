@@ -40,8 +40,7 @@ class VauthServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
-        include __DIR__.'/routes.php';
+    {        
         $this->app->make('Thienkimlove\Vauth\PostsController');
         $this->mergeConfigFrom(
             __DIR__.'/vauth.php', 'vauth'
