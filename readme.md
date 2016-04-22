@@ -22,6 +22,16 @@ Route::get('example', function () {
 //Route::resource('posts', 'PostsController');
 Route::get('index_post', '\thienkimlove\vauth\PostsController@index');
 ```
+Modify `app\User.php` :
+
+```
+use Thienkimlove\Vauth\Traits\VauthRoles;
+
+class User extends Authenticatable
+{
+    use VauthRoles;
+```
+
 6. Register one user.
 
 7. Create permission and role and map to user.
