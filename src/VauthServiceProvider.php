@@ -26,6 +26,10 @@ class VauthServiceProvider extends ServiceProvider
             __DIR__.'/views/' => resource_path('views/vendor/vauth')
         ]);
 
+        $this->publishes([
+            __DIR__.'/vauth.php' => config_path('vauth.php')
+        ]);
+
         $registrar->registerPermissions();
        
     }
