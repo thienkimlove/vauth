@@ -3,6 +3,13 @@
 namespace Thienkimlove\Vauth;
 
 use Illuminate\Support\ServiceProvider;
+use Thienkimlove\Vauth\Contracts\Permission as PermissionContracts;
+use Thienkimlove\Vauth\Contracts\Role as RoleContracts;
+use Thienkimlove\Vauth\Contracts\Post as PostContracts;
+use Thienkimlove\Vauth\Models\Permission;
+use Thienkimlove\Vauth\Models\Post;
+use Thienkimlove\Vauth\Models\Role;
+
 
 class VauthServiceProvider extends ServiceProvider
 {
@@ -60,6 +67,14 @@ class VauthServiceProvider extends ServiceProvider
         $this->app->make('Thienkimlove\Vauth\PostsController');
         $this->mergeConfigFrom(
             __DIR__.'/vauth.php', 'vauth'
-        );       
+        );
+        $this->registerModelBindings();
+    }
+
+    protected function registerModelBindings()
+    {      
+        $this->app->bind(PermissionContracts::class, Permission::class);
+        $this->app->bind(RoleContracts::class, Role::class);
+        $this->app->bind(PostContracts::class, Post::class);
     }
 }
