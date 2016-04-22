@@ -10,7 +10,8 @@
 Thienkimlove\Vauth\VauthServiceProvider::class,
 ```
 
-4. Run `php artisan vendor:publish && php artisan migrate && php artisan make:auth`
+4. Run `php artisan vendor:publish --tag="migrations"
+ && php artisan migrate && php artisan make:auth`
 
 5. Add in `routes.php`
 ```

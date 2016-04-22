@@ -28,10 +28,14 @@ class VauthRegistrar
      */
     public function registerPermissions()
     {
-        foreach ($this->getPermissions() as $permission) {
-            $this->gate->define($permission->name, function ($user) use ($permission) {
-                return $user->hasRole($permission->roles);
-            });
+        try {
+            foreach ($this->getPermissions() as $permission) {
+                $this->gate->define($permission->name, function ($user) use ($permission) {
+                    return $user->hasRole($permission->roles);
+                });
+            }
+        } catch (\Exception $e) {
+
         }
     }
 
